@@ -56,6 +56,9 @@ docker -H=tcp://127.0.0.1:4243 build -t rasshofer/masters-thesis-example .
 
 ## Changelog
 
+* 0.0.2
+	* Add instructions about persistence
+	* Add information about hosting (a little referral never killed nobody)
 * 0.0.1
 	* Initial version
 
