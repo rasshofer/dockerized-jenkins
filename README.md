@@ -10,6 +10,8 @@ While building an example CI environment for my masters thesis ([you can find th
 
 ## Setup
 
+Right now, I’m running the whole thing perfectly smooth on a single [DigitalOcean-Droplet (Ubuntu Docker 1.7 on 14.04)](https://www.digitalocean.com/?refcode=e976631c7064) with 2 GB of RAM and a 40 GB SSD disk.
+
 As you may want to customize this whole thing to your personal requirements, I decided to not publish a image of my version of a dockerized Jenkins on the Docker Hub. Instead, you have to build the image on your own locally using this repository and the following command(s).
 
 ### Build
