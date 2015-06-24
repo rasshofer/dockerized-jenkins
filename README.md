@@ -22,10 +22,22 @@ docker build -t rasshofer/dockerized-jenkins .
 
 ### Run
 
-You may want to replace `rasshofer`, `dockerized-jenkins` and `ci` with your own namespaces and names.
+Again, you may want to replace `rasshofer` and `dockerized-jenkins` with your own namespaces and names.
 
 ```sh
-docker run --name ci -p 8080:8080 -v /var/jenkins_home --privileged rasshofer/dockerized-jenkins
+docker run -p 8080:8080 -v /var/jenkins_home --privileged rasshofer/dockerized-jenkins
+```
+
+You should think about mounting a local persistent volume for `/var/jenkins_home` within the container. The following example uses `/root/jenkins` on the local host machine.
+
+```sh
+docker run -p 8080:8080 -v /root/jenkins:/var/jenkins_home --privileged rasshofer/dockerized-jenkins
+```
+
+You may receive permission errors as Jenkins isn’t able to write stuff like the plugins to your host. Changing the owner locally on the host should fix this.
+
+```sh
+chown 1000:10000 /root/jenkins
 ```
 
 ## Configuration
